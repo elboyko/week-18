@@ -207,9 +207,15 @@ document.querySelector('.b-13').addEventListener('click', showTen)
 //Подсказка: Для преобразования строки в объект используйте метод JSON.parse(). Для работы с массивом используйте циклы.
 
 const showNine = () => {
-	const arrayNineString = LocalStorage.getItem('arrayNine');
+	const arrayNineString = localStorage.getItem('arrayNine');
 	if (arrayNineString) {
 		//Ваш код
+		const arrayNine = JSON.parse(arrayNineString);
+		const resultElement = document.querySelector('.practicum14');
+		for (const key in arrayNine) {
+			const value = arrayNine[key];
+			resultElement.innerHTML += `${key}: ${value}<br>`;
+		}
 	} else {
 		console.log('Массив arrayNine не найден в Local Storage.');
 	}
@@ -222,6 +228,17 @@ document.querySelector('.b-14').addEventListener('click', showNine);
 
 const showEight = () => {
 	//Ваш код
+	const objEightString = localStorage.getItem('objectEight');
+	if (objEightString) {
+		const objEight = JSON.parse(objEightString);
+		const resultElement = document.querySelector('.practicum15');
+		for (const key in objEight) {
+			const value = objEight[key];
+			resultElement.innerHTML += `${key}: ${value}; `;
+		}
+	} else {
+		console.log('объект objEight не найден в Local Storage.');
+	}
 };
 
 document.querySelector('.b-15').addEventListener('click', showEight);
@@ -231,8 +248,22 @@ document.querySelector('.b-15').addEventListener('click', showEight);
 
 const showSeven = () => {
 	//Ваш код
-};
+	const objSevenString = localStorage.getItem('objectSeven');
+	if (objSevenString) {
+		const objSeven = JSON.parse(objSevenString);
+		const resultElement = document.querySelector('.practicum16');
+		// можно вывести через цикл, а можно и без него
+		// for (let key in objSeven) {
+		const city = objSeven.city;
+		const population = objSeven.population;
+		resultElement.textContent = `В ${city}е живет ${population} жителей`;
+		// }
+		// } 
+	} else {
+		console.log('объект objSeven не найден в Local Storage.');
 
+	};
+}
 document.querySelector('.b-16').addEventListener('click', showSeven);
 
 //Задание 17
@@ -240,8 +271,15 @@ document.querySelector('.b-16').addEventListener('click', showSeven);
 
 const showSix = () => {
 	//Ваш код
-};
-
+	const objSixString = localStorage.getItem('objectSix');
+	if (objSixString) {
+		const objSix = JSON.parse(objSixString);
+		const resultElement = document.querySelector('.practicum17');
+		const name = objSix.name;
+		const age = objSix.age;
+		resultElement.textContent = `Привет! Я ${name}. Мне ${age} лет.`
+	};
+}
 document.querySelector('.b-17').addEventListener('click', showSix);
 
 //Задание 18
@@ -249,9 +287,10 @@ document.querySelector('.b-17').addEventListener('click', showSix);
 
 const clearLocalStorage = () => {
 	//Ваш код
+	localStorage.clear()
 	console.log('Local Storage очищен.');
 };
-
+document.querySelector('.b-18').addEventListener('click', clearLocalStorage);
 //добавьте слушатель события
 
 //Задание 19
@@ -346,8 +385,11 @@ document.querySelector('.b-25').addEventListener('click', clearCart);
 //При загрузке страницы установите cookie с именем "username" и значением "Кот Учёный". Выведите сообщение в консоль, подтверждающее успешное создание cookie.
 
 //Ваш код
-console.log("Cookie 'username' установлен.");
-
+document.addEventListener('DOMContentLoaded', Cookie);
+function Cookie() {
+	document.cookie = 'username=Кот Учёный'
+	console.log("Cookie 'username' установлен.");
+}
 //Задание 27
 //Допишите функцию getCookie, которая принимает имя cookie. Функция должна получать значение cookie с указанным именем, возвращать его и записывать в элемент с классом practicum27. Если cookie с указанным именем не найден, функция должна возвращать пустую строку. Вызывается функция по кнопке Задание 27. Выведите куку с именем "username".
 
