@@ -302,7 +302,14 @@ const addToNumbers = () => {
 	const numberInput = document.getElementById('numberInput');
 	const number = parseInt(numberInput.value);
 
-	//Ваш код
+	if (!isNaN(number)) {
+		numbers.push(number);
+		localStorage.setItem("task19", JSON.stringify(numbers));
+		numberInput.value = "";
+	}
+	else {
+		console.log("Введите корректное число.");
+	}
 };
 
 document.querySelector('.b-19').addEventListener('click', addToNumbers);
@@ -312,13 +319,15 @@ document.querySelector('.b-19').addEventListener('click', addToNumbers);
 
 const removeLastElement = () => {
 	if (numbers.length > 0) {
+		numbers.pop();
+		localStorage.setItem("task19", JSON.stringify(numbers));
 		//Ваш код
 		console.log('Последний элемент удален из массива numbers и сохранен в Local Storage.');
 	} else {
 		console.log('Массив numbers пуст.');
 	}
 };
-
+document.querySelector('.b-20').addEventListener('click', removeLastElement);
 //добавьте слушатель события
 
 //Задание 21
@@ -330,9 +339,11 @@ const addToCart = () => {
 	const product = productInput.value;
 
 	if (product.trim() !== '') {
-		let cartItems = LocalStorage.getItem('cartItems');
+		let cartItems = localStorage.getItem('cartItems');
 		cartItems = cartItems ? JSON.parse(cartItems) : []; //код из подсказки
-
+		cartItems.push(product);
+		localStorage.setItem("task21", JSON.stringify(cartItems));
+		productInput.value = '';
 		//Ваш код
 
 		console.log(`Товар "${product}" добавлен в корзину и сохранен в Local Storage.`);
@@ -348,9 +359,27 @@ document.querySelector('.b-21').addEventListener('click', addToCart);
 //Подсказка: необходимо проверить, существует ли значение и не является ли оно пустым. Это может вызвать ошибку, если cartItems не существует в Local Storage или является пустым.
 
 const removeFromCart = () => {
-	//Ваш код
-};
+	let cartFrom = localStorage.getItem('cartItems');
+	if (cartFrom) {
+		cartFrom = JSON.parse(cartFrom);
 
+		if (cartFrom.length > 0) {
+			cartFrom.pop();
+			localStorage.setItem("cartFrom", JSON.stringify(cartFrom));
+
+			console.log(
+				"Последний товар удален из корзины и обновлен в Local Storage."
+			);
+		} else {
+			console.log('корзина пустая');
+		}
+	} else {
+		console.log('корзина пустая');
+	}
+
+	//Ваш код
+
+};
 document.querySelector('.b-22').addEventListener('click', removeFromCart);
 
 //Задание 23
@@ -400,10 +429,13 @@ const getCookie = (name) => {
 		const cookie = cookies[i].split('=');
 		if (cookie[0] === name) {
 			const value = cookie[1] || '';
-			//Ваш код
+			cookieContainer.textContent = value;
+			return value;
 		}
+
 	}
-	//Ваш код
+	cookieContainer.textContent = "";
+	return "";
 };
 
 document.querySelector('.b-27').addEventListener('click', () => {
@@ -415,22 +447,22 @@ document.querySelector('.b-27').addEventListener('click', () => {
 //Подсказка: используйте функцию getCookie
 
 const checkCookie = () => {
-	//Ваш код
+	const username = getCookie("username");
 	if (username !== '') {
-		//Ваш код
+		console.log("username")
 	} else {
-		//Ваш код
+		console.log("Cookie с именем 'username' не найден.");
 	}
 };
 
-// добавьте слушатель события
+document.querySelector('.b-28').addEventListener('click', checkCookie)
 
 //Задание 29
 //Создайте функцию setCookie, которая принимает имя и значение cookie. Функция должна устанавливать cookie с указанным именем и значением. После установки cookie, выведите сообщение в консоль. Вызывается функция по кнопке Задание 29.
 
 const setCookie = (name, value) => {
 	document.cookie = `${name}=${value}`;
-	//Ваш код
+	console.log(`cookie с именем ${name} и значением ${value} установлено`);
 };
 
 document.querySelector('.b-29').addEventListener('click', () => {
@@ -442,7 +474,7 @@ document.querySelector('.b-29').addEventListener('click', () => {
 
 const deleteCookie = (name) => {
 	document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-	//Ваш код
+	console.log(`cookie с именем ${name} удалено`);
 };
 
 document.querySelector('.b-30').addEventListener('click', () => {
