@@ -359,16 +359,16 @@ document.querySelector('.b-21').addEventListener('click', addToCart);
 //Подсказка: необходимо проверить, существует ли значение и не является ли оно пустым. Это может вызвать ошибку, если cartItems не существует в Local Storage или является пустым.
 
 const removeFromCart = () => {
-	let cartFrom = localStorage.getItem('cartItems');
-	if (cartFrom) {
-		cartFrom = JSON.parse(cartFrom);
+	let cartJSON = localStorage.getItem('cartItems');
+	if (cartJSON) {
+		cartItems = JSON.parse(cartJSON);
 
-		if (cartFrom.length > 0) {
-			cartFrom.pop();
-			localStorage.setItem("cartFrom", JSON.stringify(cartFrom));
+		if (cartItems.length > 0) {
+			cartItems.pop();
+			localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
 			console.log(
-				"Последний товар удален из корзины и обновлен в Local Storage."
+				'Последний товар удален из корзины и обновлен в Local Storage.'
 			);
 		} else {
 			console.log('корзина пустая');
@@ -386,7 +386,14 @@ document.querySelector('.b-22').addEventListener('click', removeFromCart);
 //Создайте функцию showCart, которая при нажатии кнопки Задание 23 получает из Local Storage сохранённый массив cartItems. Выведите элементы массива в элемент с классом practicum23. Вызывается функция по кнопке Задание 23.
 
 const showCart = () => {
-	//Ваш код
+	let cartItems = localStorage.getItem('cartItems');
+	const cartOut = document.querySelector('.practicum23');
+	const cartItemsParse = JSON.parse(cartItems);
+	const cartItemsOut = cartItemsParse.map(function (item) {
+		return `<li>${item}</li>`;
+	})
+	// cartOut.append(cartItemsOut)
+	cartOut.innerHTML = cartItemsOut.join('');
 };
 
 document.querySelector('.b-23').addEventListener('click', showCart);
@@ -404,7 +411,7 @@ document.querySelector('.b-24').addEventListener('click', updateCartCount);
 //Создайте функцию clearCart, которая при нажатии кнопки Задание 25 очищает весь массив cartItems в Local Storage. Вызывается функция по кнопке Задание 25.
 
 const clearCart = () => {
-	//Ваш код
+	localStorage.removeItem("cartItems");
 	console.log('Корзина очищена.');
 };
 
