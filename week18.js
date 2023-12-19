@@ -19,7 +19,7 @@ function makeTwo() {
 	console.log('Строка "7,6,5" была записана в Local Storage.');
 }
 document.querySelector('.b-2').addEventListener('click', makeTwo)
-//добавьте слушатель события
+
 
 //Задание 3
 //Создайте функцию makeThree, которая сохраняет в Local Storage строку "name=John, age=25". Ключ задайте самостоятельно. Вызывается функция по кнопке Задание 3.
@@ -30,7 +30,7 @@ function makeThree() {
 	console.log('Строка "name=John, age=25" была записана в Local Storage.');
 }
 document.querySelector('.b-3').addEventListener('click', makeThree)
-//добавьте слушатель события
+
 
 //Задание 4
 //Создайте функцию makeFour, которая сохраняет в Local Storage логическое значение true. Ключ задайте самостоятельно. Вызывается функция по кнопке Задание 4.
@@ -41,7 +41,7 @@ function makeFour() {
 	console.log('Логическое значение true было записано в Local Storage.');
 }
 document.querySelector('.b-4').addEventListener('click', makeFour)
-//добавьте слушатель события
+
 
 //Задание 5
 //Создайте функцию makeFive, которая сохраняет в Local Storage значение null. Ключ задайте самостоятельно. Вызывается функция по кнопке Задание 5.
@@ -52,7 +52,7 @@ function makeFive() {
 	console.log('Значение null было записано в Local Storage.');
 }
 document.querySelector('.b-5').addEventListener('click', makeFive)
-//добавьте слушатель события
+
 
 //Задание 6
 //Создайте функцию makeSix, которая сохраняет в Local Storage по ключу objectSix объект obj = { name: "Алиса", age: 30 }. Вызывается функция по кнопке Задание 6.
@@ -65,7 +65,7 @@ function makeSix() {
 	console.log('Объект obj был записан в Local Storage.');
 }
 document.querySelector('.b-6').addEventListener('click', makeSix)
-//добавьте слушатель события
+
 
 //Задание 7
 //Создайте функцию makeSeven, которая сохраняет в Local Storage по ключу objectSeven объект obj = {
@@ -88,7 +88,7 @@ function makeSeven() {
 	console.log('Объект obj был записан в Local Storage.');
 }
 document.querySelector('.b-7').addEventListener('click', makeSeven)
-//добавьте слушатель события
+
 
 //Задание 8
 //Создайте функцию makeEight, которая сохраняет в Local Storage по ключу objectEight объект obj = {
@@ -111,7 +111,7 @@ function makeEight() {
 	console.log('Объект obj был записан в Local Storage.');
 }
 document.querySelector('.b-8').addEventListener('click', makeEight)
-//добавьте слушатель события
+
 
 //Задание 9
 //Создайте функцию makeNine, которая сохраняет в Local Storage по ключу arrayNine массив arr = [1, 2, 3, 4, 5]. Вызывается функция по кнопке Задание 9.
@@ -124,7 +124,7 @@ function makeNine() {
 	console.log('Массив arr был записан в Local Storage.');
 }
 document.querySelector('.b-9').addEventListener('click', makeNine)
-//добавьте слушатель события
+
 
 //Задание 10
 //Создайте функцию makeTen, которая сохраняет в Local Storage по ключу arrayTen массив arr = ["яблоко", "банан", "апельсин"]. Вызывается функция по кнопке Задание 10.
@@ -137,7 +137,7 @@ function makeTen() {
 	console.log('Массив arr был записан в Local Storage.');
 }
 document.querySelector('.b-10').addEventListener('click', makeTen)
-//добавьте слушатель события
+
 
 //Задание 11
 //Создайте функцию makeEleven, которая сохраняет в Local Storage по ключу arrayEleven массив arr = [
@@ -158,7 +158,7 @@ function makeEleven() {
 	console.log('Массив arr был записан в Local Storage.');
 }
 document.querySelector('.b-11').addEventListener('click', makeEleven)
-//добавьте слушатель события
+
 
 //Задание 12
 //Создайте функцию showEleven, которая при нажатии кнопки Задание 12 получит из Local Storage сохраннённый массив arrayEleven. Выведите в practicum12 в формате ключ пробел значение. Вызывается функция по кнопке Задание 12.
@@ -178,7 +178,7 @@ function showEleven() {
 	document.querySelector('.practicum12').textContent = output;
 }
 document.querySelector('.b-12').addEventListener('click', showEleven)
-//добавьте слушатель события
+
 
 //Задание 13
 //Создайте функцию showTen, которая при нажатии кнопки Задание 12 получит из Local Storage сохраннённый массив arrayTen. Выведите в элемент с классом practicum13 в формате ключ пробел значение перенос строки. Вызывается функция по кнопке Задание 13.
@@ -200,7 +200,7 @@ const showTen = () => {
 	}
 };
 document.querySelector('.b-13').addEventListener('click', showTen)
-//добавьте слушатель события
+
 
 //Задание 14
 //Создайте функцию showNine, которая при нажатии кнопки Задание 14 получит из Local Storage сохраннённый массив arrayNine. Выведите в элемент с классом practicum14 в формате ключ пробел значение перенос строки. Вызывается функция по кнопке Задание 14.
@@ -291,7 +291,7 @@ const clearLocalStorage = () => {
 	console.log('Local Storage очищен.');
 };
 document.querySelector('.b-18').addEventListener('click', clearLocalStorage);
-//добавьте слушатель события
+
 
 //Задание 19
 //Cоздана форма с одним поле ввода, в которое пользователь может вводить только числа. Создайте массив numbers. Когда пользователь нажимает кнопке Задание 19 число должно добавляться в массив. Массив должен сохраняться в Local Storage с ключем task19. Вызывается функция по кнопке Задание 19. Что произойдёт, если нажать на кнопке трижды?
@@ -328,58 +328,52 @@ const removeLastElement = () => {
 	}
 };
 document.querySelector('.b-20').addEventListener('click', removeLastElement);
-//добавьте слушатель события
+
 
 //Задание 21
 //Создайте функцию addToCart, которая при нажатии кнопки Задание 21 получает из Local Storage сохранённый массив cartItems. Затем добавляет новый элемент в массив, представляющий товар, введённый вами в поле ввода. Массив cartItems должен сохраняться в Local Storage с ключом task21. Вызывается функция по кнопке Задание 21.
 //Подсказка: необходимо проверить существует ли значение и не является пустым. Если значение в хранилище есть, то оно преобразуется из JSON в массив. В противном случае, устанавливается пустой массив.
 
 const addToCart = () => {
-	const productInput = document.getElementById('productInput');
+	const productInput = document.getElementById("productInput");
 	const product = productInput.value;
 
-	if (product.trim() !== '') {
-		let cartItems = localStorage.getItem('cartItems');
+	if (product.trim() !== "") {
+		let cartItems = localStorage.getItem("cartItems");
 		cartItems = cartItems ? JSON.parse(cartItems) : []; //код из подсказки
-		cartItems.push(product);
-		localStorage.setItem("task21", JSON.stringify(cartItems));
-		productInput.value = '';
-		//Ваш код
 
-		console.log(`Товар "${product}" добавлен в корзину и сохранен в Local Storage.`);
+		cartItems.push(product);
+		localStorage.setItem("cartItems", JSON.stringify(cartItems));
+		productInput.value = '';
+		console.log(
+			`Товар "${product}" добавлен в корзину и сохранен в Local Storage.`
+		);
 	} else {
-		console.log('Введите название товара.');
+		console.log("Введите название товара.");
 	}
 };
 
-document.querySelector('.b-21').addEventListener('click', addToCart);
+document.querySelector(".b-21").addEventListener("click", addToCart);
 
 //Задание 22
 //Создайте функцию removeFromCart, которая при нажатии кнопки Задание 22 получает из Local Storage сохранённый массив cartItems. Затем удаляет последний элемент из массива. Массив cartItems должен сохраняться в Local Storage с ключом cartItems. Вызывается функция по кнопке Задание 22.
 //Подсказка: необходимо проверить, существует ли значение и не является ли оно пустым. Это может вызвать ошибку, если cartItems не существует в Local Storage или является пустым.
 
 const removeFromCart = () => {
-	let cartJSON = localStorage.getItem('cartItems');
-	if (cartJSON) {
-		cartItems = JSON.parse(cartJSON);
+	let cartItems = localStorage.getItem('cartItems');
+	cartItems = cartItems ? JSON.parse(cartItems) : [];
+	if (cartItems.length > 0) {
+		cartItems.pop();
+		localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
-		if (cartItems.length > 0) {
-			cartItems.pop();
-			localStorage.setItem('cartItems', JSON.stringify(cartItems));
-
-			console.log(
-				'Последний товар удален из корзины и обновлен в Local Storage.'
-			);
-		} else {
-			console.log('корзина пустая');
-		}
+		console.log(
+			'Последний товар удален из корзины и обновлен в Local Storage.'
+		);
 	} else {
 		console.log('корзина пустая');
 	}
 
-	//Ваш код
-
-};
+}
 document.querySelector('.b-22').addEventListener('click', removeFromCart);
 
 //Задание 23
@@ -388,12 +382,14 @@ document.querySelector('.b-22').addEventListener('click', removeFromCart);
 const showCart = () => {
 	let cartItems = localStorage.getItem('cartItems');
 	const cartOut = document.querySelector('.practicum23');
-	const cartItemsParse = JSON.parse(cartItems);
-	const cartItemsOut = cartItemsParse.map(function (item) {
-		return `<li>${item}</li>`;
+	cartItems = cartItems ? JSON.parse(cartItems) : [];
+	console.log(cartItems);
+	cartItems.forEach((element) => {
+		let box = document.createElement('p');
+		box.textContent = element;
+		cartOut.append(box);
 	})
-	// cartOut.append(cartItemsOut)
-	cartOut.innerHTML = cartItemsOut.join('');
+
 };
 
 document.querySelector('.b-23').addEventListener('click', showCart);
@@ -402,7 +398,13 @@ document.querySelector('.b-23').addEventListener('click', showCart);
 //Создайте функцию updateCartCount, которая при нажатии кнопки Задание 24 обновляет количество товаров в корзине. Получите из Local Storage сохранённый массив cartItems и выведите количество товаров в элемент с классом practicum24 (например: "Количество товаров в корзине 3"). Вызывается функция по кнопке Задание 24.
 
 const updateCartCount = () => {
-	//Ваш код
+	let cartItems = localStorage.getItem('cartItems');
+	const cartOut = document.querySelector('.practicum24');
+	cartItems = cartItems ? JSON.parse(cartItems) : [];
+	let countItems = cartItems.length
+	let countItemsOut = document.createElement('p');
+	countItemsOut.textContent = `Количество элементов в корзине: ${countItems}`;
+	cartOut.append(countItemsOut);
 };
 
 document.querySelector('.b-24').addEventListener('click', updateCartCount);
@@ -426,6 +428,8 @@ function Cookie() {
 	document.cookie = 'username=Кот Учёный'
 	console.log("Cookie 'username' установлен.");
 }
+
+
 //Задание 27
 //Допишите функцию getCookie, которая принимает имя cookie. Функция должна получать значение cookie с указанным именем, возвращать его и записывать в элемент с классом practicum27. Если cookie с указанным именем не найден, функция должна возвращать пустую строку. Вызывается функция по кнопке Задание 27. Выведите куку с именем "username".
 
