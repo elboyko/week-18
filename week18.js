@@ -460,9 +460,9 @@ document.querySelector('.b-27').addEventListener('click', () => {
 const checkCookie = () => {
 	const username = getCookie("username");
 	if (username !== '') {
-		console.log("username")
+		console.log(username)
 	} else {
-		console.log("Cookie с именем 'username' не найден.");
+		console.log(`Cookie с именем "username" не найден.`);
 	}
 };
 
